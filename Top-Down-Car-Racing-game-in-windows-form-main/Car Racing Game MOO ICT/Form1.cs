@@ -196,31 +196,34 @@ namespace Car_Racing_Game_MOO_ICT
 
         }
 
-        private void ResetGame()
-        {
+       private System.Media.SoundPlayer bgmPlayer; // thêm dòng này ở đầu class (ngoài các hàm)
 
-            btnStart.Enabled = false;
-            explosion.Visible = false;
-            award.Visible = false;
-            goleft = false;
-            goright = false;
-            score = 0;
-            award.Image = Properties.Resources.bronze;
+private void ResetGame()
+{
+    btnStart.Enabled = false;
+    explosion.Visible = false;
+    award.Visible = false;
+    goleft = false;
+    goright = false;
+    score = 0;
+    award.Image = Properties.Resources.bronze;
 
-            roadSpeed = 12;
-            trafficSpeed = 15;
+    roadSpeed = 12;
+    trafficSpeed = 15;
 
-            AI1.Top = carPosition.Next(200, 500) *-1;
-            AI1.Left = carPosition.Next(5, 200);
+    AI1.Top = carPosition.Next(200, 500) * -1;
+    AI1.Left = carPosition.Next(5, 200);
 
-            AI2.Top = carPosition.Next(200, 500) * -1;
-            AI2.Left = carPosition.Next(245, 422);
+    AI2.Top = carPosition.Next(200, 500) * -1;
+    AI2.Left = carPosition.Next(245, 422);
 
-            gameTimer.Start();
+    // 🔊 phát nhạc nền
+    bgmPlayer = new System.Media.SoundPlayer(Properties.Resources.cuanlam);
+    bgmPlayer.PlayLooping(); // phát lặp liên tục
 
+    gameTimer.Start();
+}
 
-
-        }
 
         private void restartGame(object sender, EventArgs e)
         {
