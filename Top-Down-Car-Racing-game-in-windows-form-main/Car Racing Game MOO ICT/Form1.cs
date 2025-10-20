@@ -28,7 +28,7 @@ namespace Car_Racing_Game_MOO_ICT
         public Form1()
         {
             InitializeComponent();
-            ResetGame();
+            //ResetGame();
         }
 
         private void keyisdown(object sender, KeyEventArgs e)
